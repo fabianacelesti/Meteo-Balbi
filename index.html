@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="meteo2.css">
+</head>
+<body>
+
+<main class="app">
+
+  <section class="card sunny"> <!-- La classe cambierà in JS: sunny, cloudy, rainy ecc -->
+
+    <!-- HEADER -->
+    <header class="app-header">
+      <h1 class="app-title">Weather App</h1>
+    </header>
+
+    <!-- SEARCH -->
+    <div class="search">
+      <input type="text" class="search-input" placeholder="Inserisci città" aria-label="Città">
+      <button class="search-button">Cerca</button>
+    </div>
+
+    <!-- WEATHER INFO -->
+    <section class="weather hidden">
+      <div class="weather-icon">
+        <!-- Icona SVG o PNG aggiunta dinamicamente via JS -->
+        <img src="assets/icons/sun.svg" alt="Icona meteo">
+      </div>
+      <p class="weather-city">Roma</p>
+      <p class="weather-temp">18°</p>
+      <p class="weather-desc">Cielo sereno</p>
+    </section>
+
+    <!-- LOADING -->
+    <p class="loading hidden">Caricamento meteo...</p>
+
+    <!-- ERROR -->
+    <p class="error hidden">Città non trovata</p>
+
+  </section>
+
+</main>
+
+<script src="meteo2.js"></script>
+</body>
+</html>
