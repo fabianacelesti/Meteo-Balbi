@@ -1,0 +1,262 @@
+/* =========================
+   RESET BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(180deg, #74ebd5, #ACB6E5);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* =========================
+   APP CARD
+========================= */
+.app {
+  width: 100%;
+  max-width: 420px;
+  padding: 1rem;
+}
+
+.card {
+  border-radius: 2rem;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+  background: linear-gradient(180deg,  #eb7474, #ACB6E5);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: background 0.5s ease;
+}
+
+/* SFONDI DINAMICI */
+.card.sunny { background: linear-gradient(135deg, #fd9292, #d1fdff); color: #333; }
+.card.cloudy { background: linear-gradient(135deg, #d7dde8, #9baacf); color: #222; }
+.card.rainy { background: linear-gradient(135deg, #89f7fe, #66a6ff); color: #fff; }
+
+/* =========================
+   HEADER
+========================= */
+.app-header .app-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+.search {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.search-button {
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  border: none;
+  background: #ffcc00;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.search-button:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   WEATHER INFO
+========================= */
+.weather {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.weather-icon img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 0.5rem;
+}
+
+.weather-city {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.weather-temp {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.weather-desc {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+
+/* =========================
+   FORECAST 3 GIORNI
+========================= */
+.forecast {
+  margin-top: 1.5rem;
+}
+
+.forecast h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+.forecast-cards {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap; /* per mobile più stretto */
+}
+
+.forecast-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+  border-radius: 16px;
+  padding: 1rem;
+  text-align: center;
+  min-width: 80px;
+  flex: 1 1 80px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.2s, background 0.3s;
+}
+
+.forecast-card:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+}
+
+.forecast-card img {
+  width: 40px;
+  height: 40px;
+  margin: 0.3rem 0;
+}
+
+.forecast-card .temp-range {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-top: 0.3rem;
+  font-weight: 500;
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+  .forecast-cards {
+    justify-content: space-between;
+  }
+}
+
+/* =========================
+   LOADING & ERROR
+========================= */
+.loading, .error {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.error {
+  color: #ae0202;
+}
+
+/* =========================
+   HIDDEN
+========================= */
+.hidden { display: none; }
+
+
+/* =========================
+   RESPONSIVE DESKTOP
+========================= */
+@media (min-width: 768px) {
+  body { align-items: flex-start; padding-top: 3rem; }
+  .card { padding: 3rem 2rem; }
+}
+
+/* =========================
+   PEZZO NUOVO
+========================= */
+.weather-main {
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+.weather-temp {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  padding: 1rem;
+}
+
+.detail-card {
+  background: rgba(255,255,255,0.2);
+  border-radius: 16px;
+  padding: 0.8rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.detail-card:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+}
+
+/* =========================
+   SFONDI DINAMICI METEO
+========================= */
+
+.card {
+  transition: background 0.5s ease;
+}
+
+/* Sole */
+.card.sunny {
+  background: linear-gradient(135deg, #fbc531, #f5a623);
+}
+
+/* Nuvole */
+.card.cloudy {
+  background: linear-gradient(135deg, #7f8fa6, #57606f);
+}
+
+/* Pioggia */
+.card.rainy {
+  background: linear-gradient(135deg, #4c5e88, #3867d6);
+}
+
+/* Neve */
+.card.snowy {
+  background: linear-gradient(135deg, #d1d4d5, #a9c5d1);
+}
+
+.show { display: flex; }
